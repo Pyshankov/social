@@ -1,0 +1,6 @@
+/target
+/.gitignore
+/shop.iml
+/.idea
+/src/main/java/com/pyshankov/social/main.java
+/src/main/resources
