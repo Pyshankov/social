@@ -25,7 +25,7 @@ public class User implements Serializable{
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name="follow",
             joinColumns = @JoinColumn( name="id_follower"),
@@ -33,7 +33,7 @@ public class User implements Serializable{
     )
     private List<User> followingUsers;
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name="follow",
             joinColumns = @JoinColumn( name="id_following"),

@@ -26,7 +26,9 @@ public class HibernateUserRepositoryTest {
     @Test
     public void addDeleteUser_test(){
         User user = new User.UserBuilder("pyshankov","123321","pyshankov@gmail.com").role(Role.ADMIN).build();
-        user.setId(userRepository.addUser(user));
+        userRepository.addUser(user);
+        user = userRepository.getByUserId(1);
+
         Post user_post1 = new Post("best!","photo1.png",null,null);
         Post user_post2 = new Post("best2!","photo2.png",null,null);
         user.addPost(user_post1);

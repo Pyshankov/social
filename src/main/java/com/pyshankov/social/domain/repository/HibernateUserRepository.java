@@ -1,8 +1,6 @@
 package com.pyshankov.social.domain.repository;
 
-import com.pyshankov.social.domain.entity.Post;
 import com.pyshankov.social.domain.entity.User;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,18 +30,21 @@ public class HibernateUserRepository implements UserRepository {
         return sessionFactory.getCurrentSession();
     }
 
-    public long addUser(User user) {
-        Serializable id = currentSession().save(user);
-        return (Long)id;
+    public User addUser(User user) {
+        user.setId((Long)currentSession().save(user));
+        return user;
     }
 
     public void updateUser(User user) {
         currentSession().update(user);
     }
 
-    public void deleteUser(User user) {
+    public long deleteUser(User user) {
+        long id = user.getId();
         currentSession().delete(user);
+        return id;
     }
+
 
     public User getByUserName(String username) {
         return (User) currentSession()

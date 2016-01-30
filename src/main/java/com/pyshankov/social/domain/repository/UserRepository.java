@@ -2,6 +2,9 @@ package com.pyshankov.social.domain.repository;
 
 import com.pyshankov.social.domain.entity.Post;
 import com.pyshankov.social.domain.entity.User;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -11,9 +14,12 @@ import java.util.List;
  */
 public interface UserRepository {
 
-    long addUser(User user);
+    @CachePut(value="userCache", key="#result.id")
+    User addUser(User user);
     void updateUser(User user);
-    void deleteUser(User user);
+    @CacheEvict(value = "userCache",key = "#result")
+    long deleteUser(User user);
     User getByUserName(String username);
+    @Cacheable(value = "userCache",key = "#id")
     User getByUserId(long id);
 }
