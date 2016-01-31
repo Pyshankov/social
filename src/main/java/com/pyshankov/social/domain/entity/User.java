@@ -2,6 +2,7 @@ package com.pyshankov.social.domain.entity;
 
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
