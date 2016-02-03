@@ -97,6 +97,14 @@
             <version>1.1.1</version>
         </dependency>
 
+        <!--messaging-->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-broker</artifactId>
+            <version>5.12.2</version>
+        </dependency>
+
+
 
 
 

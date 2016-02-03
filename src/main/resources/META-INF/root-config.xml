@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="com.pyshankov.social.domain.entity.User" name="user" >
+        <property name="email" value="pyshankov@gmail.com"/>
+        <property name="role" value="ADMIN"/>
+        <property name="id" value="0"/>
+        <property name="username" value="pyshankov"/>
+        <property name="password" value="123321"/>
+    </bean>
+
+</beans>

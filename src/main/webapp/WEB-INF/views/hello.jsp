@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-sdsdsdscgzdrgvsdxfvsdcvx
+    ${user.id} - ${user.username} - ${user.role}
 </body>
 </html>
