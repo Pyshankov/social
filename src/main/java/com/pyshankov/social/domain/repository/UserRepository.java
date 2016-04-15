@@ -22,4 +22,5 @@ public interface UserRepository {
     User getByUserName(String username);
     @Cacheable(value = "userCache",key = "#id")
     User getByUserId(long id);
+    List<Post> getUserPost(User u);
 }

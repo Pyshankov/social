@@ -113,13 +113,13 @@ public class User implements Serializable{
         this.userFollowers = userFollowers;
     }
 
-    public List<Post> getItemList() {
-        return itemList;
-    }
-
-    public void setItemList(List<Post> itemList) {
-        this.itemList = itemList;
-    }
+//    public List<Post> getItemList() {
+//        return itemList;
+//    }
+//
+//    public void setItemList(List<Post> itemList) {
+//        this.itemList = itemList;
+//    }
 
     public void addPost(Post post){
         post.setOwner(this);

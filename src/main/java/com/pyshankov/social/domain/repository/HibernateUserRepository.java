@@ -1,5 +1,6 @@
 package com.pyshankov.social.domain.repository;
 
+import com.pyshankov.social.domain.entity.Post;
 import com.pyshankov.social.domain.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by pyshankov on 28.01.2016.
@@ -54,7 +56,12 @@ public class HibernateUserRepository implements UserRepository {
     }
 
     public User getByUserId(long id) {
-        return currentSession().get(User.class,id);
+        return  (User) currentSession().get(User.class,id);
+    }
+
+    @Override
+    public List<Post> getUserPost(User u) {
+        return postRepository.getAllPostOfUser(u);
     }
 
 

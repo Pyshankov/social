@@ -1,6 +1,7 @@
 package com.pyshankov.social.domain.repository;
 
 import com.pyshankov.social.domain.entity.Post;
+import com.pyshankov.social.domain.entity.User;
 
 import java.util.List;
 
@@ -13,5 +14,6 @@ public interface PostRepository {
     Post getById(long id);
     void deletePost(Post p);
     void updatePost(Post p);
+    List<Post> getAllPostOfUser(User u);
 
 }
